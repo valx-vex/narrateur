@@ -13,6 +13,16 @@ You get one M4B file with chapters (it opens in Apple Books and remembers where 
 - About 10 GB of free disk space. Each speech model is about 4.5 GB, and one kind of voice needs two of them.
 - [Homebrew](https://brew.sh), to install the engine.
 
+## The quick way: one line
+
+Open **Terminal** (in Applications, then Utilities), paste this line, and press Return:
+
+    curl -fsSL https://raw.githubusercontent.com/valx-vex/narrateur/main/install.sh | bash
+
+It checks your Mac, installs what is missing (Homebrew, ffmpeg, uv, the engine), puts Narrateur in the Applications folder of your home, downloads the reading voice once (about 4.5 GB), and opens the app. If macOS asks for your password, it is for Homebrew: type it and press Return (nothing shows while you type). Running it again is safe. To see exactly what it does before you run it, read [install.sh](install.sh).
+
+If you prefer to do each step yourself, read on.
+
 ## 1. Download the app and open it
 
 1. Download `Narrateur-<version>-macos-arm64.zip` from the [releases page](https://github.com/valx-vex/narrateur/releases) and double-click it to unzip.
