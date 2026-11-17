@@ -14,6 +14,7 @@
 # Running it again is safe: it updates what is there and keeps your books and voices.
 # Options: NARRATEUR_SKIP_VOICE=1 (leave the voice for the first Render), NARRATEUR_NO_OPEN=1 (do not open the app).
 set -euo pipefail
+{ # read the whole script before running it: a command that reads stdin cannot cut it short under curl | bash
 
 APP_VERSION="1.0.0"
 APP_ZIP="Narrateur-${APP_VERSION}-macos-arm64.zip"
@@ -90,3 +91,4 @@ fi
 step "7/7  Opening Narrateur"
 if [ "${NARRATEUR_NO_OPEN:-0}" = "1" ]; then ok "Not opened (NARRATEUR_NO_OPEN=1)."; else open "${APPS_DIR}/Narrateur.app"; fi
 printf '\nDone. Narrateur is in %s. Choose a Markdown book, choose a narrator, press Render.\n' "$APPS_DIR"
+}
